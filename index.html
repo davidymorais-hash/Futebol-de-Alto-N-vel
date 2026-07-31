@@ -1,49 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        header{
-            background-color: aqua;
-            color: black;
-            text-align: center;
-            max-width: 888px;
-            margin: auto;
-            padding: 16px;
-        }
-        main{
-            background-color: blueviolet;
-            color: azure;
-            max-width: 800px;
-            margin: auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Blog</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:aqua;
+    color:black;
+    text-align:center;
+    max-width:900px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+main{
+    background:blueviolet;
+    color:white;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+article{
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+article img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.artigo-autor{
+    color:gray;
+    margin:10px 0;
+}
+
+.botoes{
+    margin-top:20px;
+}
+
+button{
+    padding:10px 18px;
+    margin-right:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn-curtir{
+    background:#ff4d6d;
+    color:white;
+}
+
+.btn-curtir:hover{
+    background:#d63354;
+}
+
+.btn-like{
+    background:#1877f2;
+    color:white;
+}
+
+.btn-like:hover{
+    background:#0d5fd3;
+}
+</style>
+
 </head>
 <body>
-    <header>
-        <h1>título principal</h1>
-        <p>explicação breve sobre o blog</p>
-    </header>
-    <main>
-        <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png"
-        <h2>subtítulo</h2>
-        <p>escrever detalhamente sobre o assunto </p>
-    </main>
+
+<header>
+    <h1>Título Principal</h1>
+    <p>Explicação breve sobre o blog.</p>
+</header>
+
+<main>
+
+    <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png" alt="Imagem principal">
+
+    <h2>Subtítulo</h2>
+
+    <p>
+        Escreva detalhadamente sobre o assunto do seu blog.
+    </p>
+
+    <article>
+
+        <img src="imagem-blog.png" alt="Imagem do artigo">
+
+        <div>
+
+            <h2>Meu primeiro post</h2>
+
+            <p class="artigo-autor">
+                Por: Marcelo Paludetto
+            </p>
+
+            <p>
+                Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de
+                programação, HTML, CSS, JavaScript e curiosidades da área de
+                tecnologia.
+            </p>
+
+            <div class="botoes">
+
+                <button class="btn-curtir">
+                    ❤️ <span id="curtir">0</span>
+                </button>
+
+                <button class="btn-like">
+                    👍 <span id="like">0</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</main>
+
+<script>
+let curtidas = 0;
+let likes = 0;
+
+document.querySelector(".btn-curtir").addEventListener("click", function(){
+    curtidas++;
+    document.getElementById("curtir").textContent = curtidas;
+});
+
+document.querySelector(".btn-like").addEventListener("click", function(){
+    likes++;
+    document.getElementById("like").textContent = likes;
+});
+</script>
+
 </body>
 </html>
-<main>
-<article>
-<img src="imagem-blog.png"
-alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi‑Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
-
-<div>
-<h2>Meu primeiro post</h2>
-<p class="artigo-autor">Por: Marcelo Paludetto</p>
-<p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação
-e curiosidades da área de tecnologia.</p>
-<button>❤️<span>0</span></button>
-<button>👍<span>0</span></button>
-</div>
-</article>
