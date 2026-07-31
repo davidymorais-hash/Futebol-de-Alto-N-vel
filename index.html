@@ -90,7 +90,7 @@ button.curtido{
         </p>
 
         <button id="btnCurtir">
-            🤍 Curtir (<span id="contador">0</span>)
+            <span id="iconeCurtir">🤍 Curtir</span> (<span id="contador">0</span>)
         </button>
 
     </article>
@@ -98,7 +98,9 @@ button.curtido{
 </main>
 
 <script>
+// Seleção dos elementos do DOM
 const botao = document.getElementById("btnCurtir");
+const icone = document.getElementById("iconeCurtir");
 const contador = document.getElementById("contador");
 
 let curtidas = 0;
@@ -107,16 +109,23 @@ let curtiu = false;
 botao.addEventListener("click", function(){
 
     if(curtiu){
+        // Remove a curtida
         curtidas--;
-        botao.classList.remove("curtido");
-        botao.innerHTML = '🤍 Curtir (<span id="contador">' + curtidas + '</span>)';
         curtiu = false;
+        
+        botao.classList.remove("curtido");
+        icone.textContent = "🤍 Curtir";
     }else{
+        // Adiciona a curtida
         curtidas++;
-        botao.classList.add("curtido");
-        botao.innerHTML = '❤️ Curtido (<span id="contador">' + curtidas + '</span>)';
         curtiu = true;
+        
+        botao.classList.add("curtido");
+        icone.textContent = "❤️ Curtido";
     }
+
+    // Atualiza o valor do número do contador
+    contador.textContent = curtidas;
 
 });
 </script>
