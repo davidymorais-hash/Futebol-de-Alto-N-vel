@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 }
 
 body{
-    background:#f4f4f4;
+    background:#f2f2f2;
 }
 
 header{
@@ -36,12 +36,17 @@ main{
     border-radius:10px;
 }
 
+main img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
 article{
     background:white;
     color:black;
     padding:20px;
     border-radius:10px;
-    margin-top:20px;
 }
 
 article img{
@@ -60,7 +65,7 @@ article img{
 }
 
 button{
-    padding:10px 18px;
+    padding:10px 20px;
     margin-right:10px;
     border:none;
     border-radius:8px;
@@ -74,17 +79,14 @@ button{
     color:white;
 }
 
-.btn-curtir:hover{
-    background:#d63354;
-}
-
 .btn-like{
     background:#1877f2;
     color:white;
 }
 
+.btn-curtir:hover,
 .btn-like:hover{
-    background:#0d5fd3;
+    transform:scale(1.05);
 }
 </style>
 
@@ -106,35 +108,32 @@ button{
         Escreva detalhadamente sobre o assunto do seu blog.
     </p>
 
+    <br>
+
     <article>
 
         <img src="imagem-blog.png" alt="Imagem do artigo">
 
-        <div>
+        <h2>Meu primeiro post</h2>
 
-            <h2>Meu primeiro post</h2>
+        <p class="artigo-autor">
+            Por: Marcelo Paludetto
+        </p>
 
-            <p class="artigo-autor">
-                Por: Marcelo Paludetto
-            </p>
+        <p>
+            Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de
+            programação e curiosidades da área de tecnologia.
+        </p>
 
-            <p>
-                Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de
-                programação, HTML, CSS, JavaScript e curiosidades da área de
-                tecnologia.
-            </p>
+        <div class="botoes">
 
-            <div class="botoes">
+            <button class="btn-curtir">
+                ❤️ <span id="curtir">0</span>
+            </button>
 
-                <button class="btn-curtir">
-                    ❤️ <span id="curtir">0</span>
-                </button>
-
-                <button class="btn-like">
-                    👍 <span id="like">0</span>
-                </button>
-
-            </div>
+            <button class="btn-like">
+                👍 <span id="like">0</span>
+            </button>
 
         </div>
 
@@ -143,17 +142,49 @@ button{
 </main>
 
 <script>
-let curtidas = 0;
-let likes = 0;
+// Botão Curtir
+const btnCurtir = document.querySelector(".btn-curtir");
+const contadorCurtir = document.getElementById("curtir");
 
-document.querySelector(".btn-curtir").addEventListener("click", function(){
-    curtidas++;
-    document.getElementById("curtir").textContent = curtidas;
+let curtiu = false;
+let curtidas = 0;
+
+btnCurtir.addEventListener("click", function(){
+
+    if(curtiu){
+        curtidas--;
+        curtiu = false;
+        btnCurtir.style.background = "#ff4d6d";
+    }else{
+        curtidas++;
+        curtiu = true;
+        btnCurtir.style.background = "#b3002d";
+    }
+
+    contadorCurtir.textContent = curtidas;
 });
 
-document.querySelector(".btn-like").addEventListener("click", function(){
-    likes++;
-    document.getElementById("like").textContent = likes;
+
+// Botão Like
+const btnLike = document.querySelector(".btn-like");
+const contadorLike = document.getElementById("like");
+
+let gostou = false;
+let likes = 0;
+
+btnLike.addEventListener("click", function(){
+
+    if(gostou){
+        likes--;
+        gostou = false;
+        btnLike.style.background = "#1877f2";
+    }else{
+        likes++;
+        gostou = true;
+        btnLike.style.background = "#0d47a1";
+    }
+
+    contadorLike.textContent = likes;
 });
 </script>
 
