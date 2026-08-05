@@ -1,136 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meu Blog de Esportes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog de Esportes</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-body{
-    background:#f2f2f2;
-}
+        body {
+            background: #f2f2f2;
+        }
 
-header{
-    max-width:900px;
-    margin:20px auto;
-    padding:20px;
-    background:aqua;
-    text-align:center;
-    border-radius:10px;
-}
+        header {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: aqua;
+            text-align: center;
+            border-radius: 10px;
+        }
 
-main{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-    background:blueviolet;
-    color:white;
-    border-radius:10px;
-}
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: blueviolet;
+            color: white;
+            border-radius: 10px;
+        }
 
-article{
-    background:white;
-    color:black;
-    padding:20px;
-    border-radius:10px;
-    margin-top:20px;
-}
+        article {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-img{
-    width:100%;
-    border-radius:10px;
-    margin-bottom:15px;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-}
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
 
-button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    background:#666;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-}
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #666;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-button.curtido{
-    background:#e60023;
-}
-</style>
-
+        button.curtido {
+            background: #e60023;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>Blog de Esportes de Elite</h1>
-    <p>Acompanhe as notícias e análises do futebol de alto nível.</p>
-</header>
+    <header>
+        <h1>Blog de Esportes de Elite</h1>
+        <p>Acompanhe as notícias e análises do futebol de alto nível.</p>
+    </header>
 
-<main>
+    <main>
+        <article>
+            <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png" alt="Foto de ação de futebol de alto nível">
 
-    <article>
+            <h2>Destaques da Temporada Europeia</h2>
 
-        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=900&h=506&auto=format&fit=crop" alt="Foto de ação de futebol de alto nível em um estádio lotado">
+            <p><strong>Por:</strong> Redação Esportiva</p>
 
-        <h2>Destaques da Temporada Europeia</h2>
+            <p>
+                Confira nossa análise detalhada dos confrontos da Liga dos Campeões,
+                as transferências mais quentes e o desempenho das maiores estrelas do futebol mundial.
+                Tudo sobre o esporte mais amado do planeta no mais alto nível de competição.
+            </p>
 
-        <p><strong>Por:</strong> Redação Esportiva</p>
+            <button id="btnCurtir">
+                <span id="iconeCurtir">🤍 Curtir</span> (<span id="contador">0</span>)
+            </button>
+        </article>
+    </main>
 
-        <p>
-            Confira nossa análise detalhada dos confrontos da Liga dos Campeões,
-            as transferências mais quentes e o desempenho das maiores estrelas do futebol mundial.
-            Tudo sobre o esporte mais amado do planeta no mais alto nível de competição.
-        </p>
+    <script>
+        const botao = document.getElementById("btnCurtir");
+        const icone = document.getElementById("iconeCurtir");
+        const contador = document.getElementById("contador");
 
-        <button id="btnCurtir">
-            <span id="iconeCurtir">🤍 Curtir</span> (<span id="contador">0</span>)
-        </button>
+        let curtidas = 0;
+        let curtiu = false;
 
-    </article>
+        botao.addEventListener("click", function() {
+            if (curtiu) {
+                curtidas--;
+                curtiu = false;
+                botao.classList.remove("curtido");
+                icone.textContent = "🤍 Curtir";
+            } else {
+                curtidas++;
+                curtiu = true;
+                botao.classList.add("curtido");
+                icone.textContent = "❤️ Curtido";
+            }
 
-</main>
-
-<script>
-// Seleção dos elementos do DOM
-const botao = document.getElementById("btnCurtir");
-const icone = document.getElementById("iconeCurtir");
-const contador = document.getElementById("contador");
-
-let curtidas = 0;
-let curtiu = false;
-
-botao.addEventListener("click", function(){
-
-    if(curtiu){
-        // Remove a curtida
-        curtidas--;
-        curtiu = false;
-        
-        botao.classList.remove("curtido");
-        icone.textContent = "🤍 Curtir";
-    }else{
-        // Adiciona a curtida
-        curtidas++;
-        curtiu = true;
-        
-        botao.classList.add("curtido");
-        icone.textContent = "❤️ Curtido";
-    }
-
-    // Atualiza o valor do número do contador
-    contador.textContent = curtidas;
-
-});
-</script>
+            contador.textContent = curtidas;
+        });
+    </script>
 
 </body>
 </html>
