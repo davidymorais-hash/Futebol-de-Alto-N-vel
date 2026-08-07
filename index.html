@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog de Esportes</title>
+    <title>Meu Blog de Esportes - Futebol de Elite</title>
 
     <style>
         * {
@@ -20,10 +20,20 @@
         header {
             max-width: 900px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 25px;
             background: aqua;
             text-align: center;
             border-radius: 10px;
+        }
+
+        header h1 {
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #333;
+            font-weight: bold;
         }
 
         main {
@@ -41,30 +51,41 @@
         article {
             background: white;
             color: black;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         article h2 {
             margin-bottom: 10px;
-            color: #333;
+            color: #222;
+        }
+
+        .meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        article p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         article ul {
             margin-left: 20px;
-            margin-top: 10px;
             margin-bottom: 15px;
         }
 
         article li {
             margin-bottom: 8px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         img {
             width: 100%;
             height: auto;
-            max-height: 450px;
+            max-height: 400px;
             border-radius: 10px;
             margin-bottom: 15px;
             object-fit: cover;
@@ -77,9 +98,13 @@
             border-radius: 8px;
             background: #666;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.9;
         }
 
         button.curtido {
@@ -91,21 +116,19 @@
 
     <header>
         <h1>Blog de Esportes de Elite</h1>
-        <p>Acompanhe as notícias e análises do futebol de alto nível.</p>
+        <p>Acompanhe as notícias, táticas e análises do futebol de alto nível mundial.</p>
     </header>
 
     <main>
         <article>
-            <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png" alt="Foto de ação de futebol de alto nível">
+            <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png" alt="Ação de futebol em partida de alto nível">
 
-            <h2>Destaques da Temporada Europeia</h2>
-
-            <p><strong>Por:</strong> Redação Esportiva</p>
+            <h2>Análise: A Evolução Tática na Champions League</h2>
+            <p class="meta"><strong>Por:</strong> Redação Esportiva | Futebol de Elite</p>
 
             <p>
-                Confira nossa análise detalhada dos confrontos da Liga dos Campeões,
-                as transferências mais quentes e o desempenho das maiores estrelas do futebol mundial.
-                Tudo sobre o esporte mais amado do planeta no mais alto nível de competição.
+                O futebol de alto nível exige adaptação rápida. Acompanhe nossa cobertura completa sobre como 
+                os gigantes da Europa redefiniram a pressão alta e o uso de pontas construtores nesta temporada.
             </p>
 
             <button class="btnCurtir">
@@ -114,68 +137,61 @@
         </article>
 
         <article>
-            <h2>🎯 1. Análises Táticas Profundas</h2>
-            <p>O público que busca "futebol de alto nível" quer entender o que acontece além da bola na rede.</p>
+            <h2>🎯 Análise Tática: O Falso 9 e a Criação de Espaços</h2>
+            <p class="meta"><strong>Categoria:</strong> Tática & Estratégia</p>
+
+            <p>
+                A movimentação dos atacantes modernos mudou o jeito de defender das linhas de quatro:
+            </p>
             <ul>
-                <li><strong>Desconstruindo Sistemas:</strong> "Como o esquema sem centroavante fixo revolucionou o ataque dos grandes europeus".</li>
-                <li><strong>Análise Match-by-Match:</strong> Escolha o clássico do fim de semana na Champions League ou Premier League e analise onde o jogo foi ganho taticamente.</li>
-                <li><strong>O Mapeamento do Pressionamento:</strong> Como os técnicos de ponta organizam o <em>pressing</em> na saída de bola adversária.</li>
+                <li><strong>Desconstruindo Sistemas:</strong> Como o uso de um articulador no ataque atrai zagueiros e abre corredores para os pontas.</li>
+                <li><strong>Goleiros Linha:</strong> A construção da jogada começando no tiro de meta com passe curto para atrair o <em>pressing</em> adversário.</li>
+                <li><strong>Transição Defensiva:</strong> A regra dos 5 segundos para recuperar a posse de bola logo após a perda.</li>
             </ul>
+
             <button class="btnCurtir">
                 <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
         <article>
-            <h2>📊 2. Dados e Métricas Avançadas (Futebol Analytics)</h2>
-            <p>Simplifique números sofisticados para tornar a leitura visual e cativante.</p>
+            <h2>📊 Métricas Modernas: O que é xG e xA?</h2>
+            <p class="meta"><strong>Categoria:</strong> Futebol Analytics</p>
+
+            <p>
+                Para entender o futebol moderno, precisamos olhar além do placar final:
+            </p>
             <ul>
-                <li><strong>A Metrificação da Performance:</strong> O que métricas como xG, xA e PPDA revelam sobre o favoritismo dos clubes.</li>
-                <li><strong>Os Extremos Mais Eficientes do Mundo:</strong> Comparativo de dados de eficácia no 1v1 entre os pontas que dominam a Europa.</li>
-                <li><strong>Goleiros Modernos:</strong> Como a precisão nos passes longos se tornou tão decisiva quanto defesas difíceis.</li>
+                <li><strong>Expected Goals (xG):</strong> A probabilidade de um chute virar gol com base na distância, ângulo e pressão defensiva.</li>
+                <li><strong>Expected Assists (xA):</strong> Mede a qualidade do passe que gerou a finalização.</li>
+                <li><strong>PPDA (Passes por Ação Defensiva):</strong> Quanto menor o número, mais intensa é a pressão do time sem a bola.</li>
             </ul>
+
             <button class="btnCurtir">
                 <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
         <article>
-            <h2>💼 3. Bastidores, Finanças e Mercado de Transferências</h2>
-            <p>Futebol de elite é também um mercado de bilhões de euros.</p>
+            <h2>💼 Mercado de Transferências & Fair Play Financeiro</h2>
+            <p class="meta"><strong>Categoria:</strong> Bastidores e Negócios</p>
+
+            <p>
+                As movimentações milionárias que moldam as principais ligas do mundo:
+            </p>
             <ul>
-                <li><strong>Impacto do Fair Play Financeiro (FFP):</strong> Como as novas regras de sustentabilidade financeira da UEFA afetam as contratações.</li>
-                <li><strong>A Anatomia de um Negócio Histórico:</strong> O raio-x do impacto técnico e financeiro de uma grande transferência milionária.</li>
-                <li><strong>Modelo de Multiclubes (MCO):</strong> Como grupos donos de múltiplos clubes gerenciam talentos globais.</li>
+                <li><strong>Regras da UEFA:</strong> Como o teto de gastos baseado em receitas afeta a contratação de astros.</li>
+                <li><strong>A Era dos Grupos Multiclubes:</strong> Redes globais de captação que contratam promessas jovens na América do Sul e aceleram sua evolução na Europa.</li>
             </ul>
+
             <button class="btnCurtir">
                 <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
-        </article>
-
-        <article>
-            <h2>🌟 4. Perfis de Estrelas & Promessas de Elite</h2>
-            <p>O leitor adora entender o comportamento e a evolução dos grandes craques.</p>
-            <ul>
-                <li><strong>O Raio-X do Craque:</strong> Como as jovens promessas (<em>wonderkids</em>) se tornam realidades prontas para decidir jogos.</li>
-                <li><strong>Longevidade no Esporte de Elite:</strong> O treinamento físico, nutrição e preparação mental por trás dos atletas acima dos 35 anos.</li>
-                <li><strong>A Transição da Seleção para os Clubes:</strong> A diferença de ritmo, entrosamento e carga de jogos.</li>
-            </ul>
-            <button class="btnCurtir">
-                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
-            </button>
-        </article>
-
-        <article>
-            <h2>💡 Dicas Estruturais para o Blog</h2>
-            <ul>
-                <li><strong>Pense Visualmente:</strong> Inclua mapas de calor, pranchetas táticas e gráficos explicativos.</li>
-                <li><strong>Crie Séries Fixas:</strong> Crie quadros como "O Desenho da Rodada" ou "Raio-X da Champions".</li>
-                <li><strong>Linguagem Acessível:</strong> Mantenha o tom especializado sem deixar o texto pesado.</li>
-            </ul>
         </article>
     </main>
 
     <script>
+        // Seleciona todos os botões de curtir do blog
         const botoes = document.querySelectorAll(".btnCurtir");
 
         botoes.forEach(botao => {
