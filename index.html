@@ -3,217 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog de Esportes - Futebol de Elite</title>
+    <title>Futebol de Alto Nível</title>
 
     <style>
+        :root {
+            --bg-body: #0b0f19;
+            --bg-card: #151c2c;
+            --accent: #00f2fe;
+            --text: #ffffff;
+            --text-secondary: #94a3b8;
+            --border: #232d42;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background: #f2f2f2;
+            background-color: var(--bg-body);
+            color: var(--text);
+            line-height: 1.6;
         }
 
+        /* Topbar / Header */
         header {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 25px;
-            background: aqua;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            padding: 40px 20px;
             text-align: center;
-            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 114, 255, 0.3);
         }
 
         header h1 {
-            color: #111;
-            margin-bottom: 5px;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
-            color: #333;
-            font-weight: bold;
+            font-size: 1.1rem;
+            color: #e0f2fe;
+            margin-top: 5px;
         }
 
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: blueviolet;
-            color: white;
-            border-radius: 10px;
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Coluna Principal de Feeds */
+        .feed {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         article {
-            background: white;
-            color: black;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.15);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
         article h2 {
+            font-size: 1.6rem;
             margin-bottom: 10px;
-            color: #222;
+            color: #fff;
         }
 
-        .meta {
-            font-size: 14px;
-            color: #666;
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
             margin-bottom: 15px;
         }
 
-        article p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        article ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        article li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        img {
+        article img {
             width: 100%;
             height: auto;
-            max-height: 400px;
-            border-radius: 10px;
+            max-height: 420px;
+            border-radius: 8px;
             margin-bottom: 15px;
             object-fit: cover;
         }
 
-        button {
-            margin-top: 10px;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            background: #666;
-            color: white;
-            font-size: 16px;
+        article p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        /* Botão de Interação */
+        .btn-curtir {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: 0.3s;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
         }
 
-        button:hover {
-            opacity: 0.9;
+        .btn-curtir:hover {
+            border-color: var(--accent);
+            background: rgba(0, 242, 254, 0.1);
         }
 
-        button.curtido {
-            background: #e60023;
+        .btn-curtir.curtido {
+            background: #ef4444;
+            border-color: #ef4444;
+            color: #fff;
+        }
+
+        /* Barra Lateral (Sidebar) */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .widget h3 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        /* Tabela de Classificação */
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .ranking-table th, .ranking-table td {
+            padding: 8px 4px;
+            text-align: left;
+        }
+
+        .ranking-table th {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .ranking-table tr:not(:last-child) td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Blog de Esportes de Elite</h1>
-        <p>Acompanhe as notícias, táticas e análises do futebol de alto nível mundial.</p>
+        <h1>Futebol de Alto Nível</h1>
+        <p>Acompanhe as notícias e análises do futebol de alto nível mundial.</p>
     </header>
 
-    <main>
-        <article>
-            <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png" alt="Ação de futebol em partida de alto nível">
+    <div class="container">
+        
+        <main class="feed">
+            
+            <article>
+                <span class="badge">Análise Especial</span>
+                <h2>Destaques da Temporada Europeia</h2>
+                <div class="meta-info">Por <strong>Redação Esportiva</strong> • Atualizado recentemente</div>
 
-            <h2>Análise: A Evolução Tática na Champions League</h2>
-            <p class="meta"><strong>Por:</strong> Redação Esportiva | Futebol de Elite</p>
+                <img src="Gemini_Generated_Image_i39jqfi39jqfi39j (2).png" alt="Ação de futebol em partida de alto nível">
 
-            <p>
-                O futebol de alto nível exige adaptação rápida. Acompanhe nossa cobertura completa sobre como 
-                os gigantes da Europa redefiniram a pressão alta e o uso de pontas construtores nesta temporada.
-            </p>
+                <p>
+                    Confira nossa análise detalhada dos confrontos da Liga dos Campeões,
+                    as transferências mais quentes e o desempenho das maiores estrelas do futebol mundial.
+                    Tudo sobre o esporte mais amado do planeta no mais alto nível de competição.
+                </p>
 
-            <button class="btnCurtir">
-                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
-            </button>
-        </article>
+                <button class="btn-curtir">
+                    <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+                </button>
+            </article>
 
-        <article>
-            <h2>🎯 Análise Tática: O Falso 9 e a Criação de Espaços</h2>
-            <p class="meta"><strong>Categoria:</strong> Tática & Estratégia</p>
+            <article>
+                <span class="badge">Tática & Estratégia</span>
+                <h2>A Revolução do "Gegenpressing" nos Clubes de Elite</h2>
+                <div class="meta-info">Por <strong>Análise Tática</strong></div>
 
-            <p>
-                A movimentação dos atacantes modernos mudou o jeito de defender das linhas de quatro:
-            </p>
-            <ul>
-                <li><strong>Desconstruindo Sistemas:</strong> Como o uso de um articulador no ataque atrai zagueiros e abre corredores para os pontas.</li>
-                <li><strong>Goleiros Linha:</strong> A construção da jogada começando no tiro de meta com passe curto para atrair o <em>pressing</em> adversário.</li>
-                <li><strong>Transição Defensiva:</strong> A regra dos 5 segundos para recuperar a posse de bola logo após a perda.</li>
-            </ul>
+                <p>
+                    Como os principais técnicos do mundo estão organizando a pressão imediata após a perda da posse de bola. A compactação das linhas e a aceleração nos primeiros 5 segundos tornaram-se o pilar defensivo dos maiores campeões continentais.
+                </p>
 
-            <button class="btnCurtir">
-                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
-            </button>
-        </article>
+                <button class="btn-curtir">
+                    <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+                </button>
+            </article>
 
-        <article>
-            <h2>📊 Métricas Modernas: O que é xG e xA?</h2>
-            <p class="meta"><strong>Categoria:</strong> Futebol Analytics</p>
+            <article>
+                <span class="badge">Analytics</span>
+                <h2>Métricas Avançadas: O Impacto Real do xG e xA</h2>
+                <div class="meta-info">Por <strong>Dados & Performance</strong></div>
 
-            <p>
-                Para entender o futebol moderno, precisamos olhar além do placar final:
-            </p>
-            <ul>
-                <li><strong>Expected Goals (xG):</strong> A probabilidade de um chute virar gol com base na distância, ângulo e pressão defensiva.</li>
-                <li><strong>Expected Assists (xA):</strong> Mede a qualidade do passe que gerou a finalização.</li>
-                <li><strong>PPDA (Passes por Ação Defensiva):</strong> Quanto menor o número, mais intensa é a pressão do time sem a bola.</li>
-            </ul>
+                <p>
+                    Entenda como métricas de probabilidade de gols esperados (xG) e assistências esperadas (xA) mudaram o mapeamento de mercado dos clubes europeus e a avaliação de eficiência dos atacantes modernos.
+                </p>
 
-            <button class="btnCurtir">
-                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
-            </button>
-        </article>
+                <button class="btn-curtir">
+                    <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+                </button>
+            </article>
 
-        <article>
-            <h2>💼 Mercado de Transferências & Fair Play Financeiro</h2>
-            <p class="meta"><strong>Categoria:</strong> Bastidores e Negócios</p>
+        </main>
 
-            <p>
-                As movimentações milionárias que moldam as principais ligas do mundo:
-            </p>
-            <ul>
-                <li><strong>Regras da UEFA:</strong> Como o teto de gastos baseado em receitas afeta a contratação de astros.</li>
-                <li><strong>A Era dos Grupos Multiclubes:</strong> Redes globais de captação que contratam promessas jovens na América do Sul e aceleram sua evolução na Europa.</li>
-            </ul>
+        <aside>
+            
+            <div class="widget">
+                <h3>🏆 Champions League</h3>
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Clube</th>
+                            <th>J</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Arsenal</td>
+                            <td>8</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>2. FC Bayern</td>
+                            <td>8</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>3. Liverpool</td>
+                            <td>8</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>4. Real Madrid</td>
+                            <td>8</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <button class="btnCurtir">
-                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
-            </button>
-        </article>
-    </main>
+            <div class="widget">
+                <h3>📌 Sobre o Blog</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                    Plataforma focada em cobertura tática, métricas de desempenho e negócios do futebol de elite ao redor do mundo.
+                </p>
+            </div>
+
+        </aside>
+
+    </div>
 
     <script>
-        // Seleciona todos os botões de curtir do blog
-        const botoes = document.querySelectorAll(".btnCurtir");
+        // Sistema interativo de curtidas para todos os posts
+        const botoes = document.querySelectorAll(".btn-curtir");
 
         botoes.forEach(botao => {
             let curtidas = 0;
             let curtiu = false;
 
             botao.addEventListener("click", function() {
-                const icone = this.querySelector(".iconeCurtir");
+                const icone = this.querySelector(".icone-curtir");
                 const contador = this.querySelector(".contador");
 
-                if (curtiu) {
-                    curtidas--;
-                    curtiu = false;
-                    this.classList.remove("curtido");
-                    icone.textContent = "🤍 Curtir";
-                } else {
-                    curtidas++;
-                    curtiu = true;
-                    this.classList.add("curtido");
-                    icone.textContent = "❤️ Curtido";
-                }
+                curtiu = !curtiu;
+                curtidas += curtiu ? 1 : -1;
 
+                this.classList.toggle("curtido", curtiu);
+                icone.textContent = curtiu ? "❤️" : "🤍";
                 contador.textContent = curtidas;
             });
         });
