@@ -3,133 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Esportes de Elite</title>
+    <title>Meu Blog de Esportes</title>
 
     <style>
-        :root {
-            --bg-color: #0f172a;       /* Azul escuro moderno */
-            --card-bg: #1e293b;        /* Fundo dos posts */
-            --accent-color: #38bdf8;   /* Azul destaque */
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --like-color: #ef4444;      /* Vermelho para o curtir */
-            --border-color: #334155;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
+            background: #f2f2f2;
         }
 
         header {
             max-width: 900px;
-            margin: 0 auto 30px auto;
-            padding: 30px 20px;
+            margin: 20px auto;
+            padding: 20px;
+            background: aqua;
             text-align: center;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+            border-radius: 10px;
         }
 
         main {
             max-width: 900px;
-            margin: 0 auto;
+            margin: auto;
+            padding: 20px;
+            background: blueviolet;
+            color: white;
+            border-radius: 10px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
         article {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
-        }
-
-        article img {
-            width: 100%;
-            height: 380px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            object-fit: cover;
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         article h2 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: var(--accent-color);
+            margin-bottom: 10px;
+            color: #333;
         }
 
-        .meta-info {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        article ul {
+            margin-left: 20px;
+            margin-top: 10px;
             margin-bottom: 15px;
         }
 
-        ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
+        article li {
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        li {
-            margin-bottom: 10px;
-            color: #cbd5e1;
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: cover;
         }
 
-        li strong {
-            color: var(--text-main);
-        }
-
-        .dicas-box {
-            background: rgba(56, 189, 248, 0.05);
-            border-left: 4px solid var(--accent-color);
-        }
-
-        .btn-curtir {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border: 1px solid #475569;
-            border-radius: 20px;
-            background: transparent;
-            color: var(--text-main);
-            font-size: 1rem;
-            font-weight: 600;
+        button {
+            margin-top: 10px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #666;
+            color: white;
+            font-size: 18px;
             cursor: pointer;
-            transition: all 0.2s ease-in-out;
+            transition: 0.3s;
         }
 
-        .btn-curtir:hover {
-            border-color: var(--accent-color);
-            background: rgba(56, 189, 248, 0.1);
-        }
-
-        .btn-curtir.curtido {
-            border-color: var(--like-color);
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--like-color);
+        button.curtido {
+            background: #e60023;
         }
     </style>
 </head>
@@ -137,7 +91,7 @@
 
     <header>
         <h1>Blog de Esportes de Elite</h1>
-        <p>Acompanhe as notícias, táticas e análises do futebol de alto nível.</p>
+        <p>Acompanhe as notícias e análises do futebol de alto nível.</p>
     </header>
 
     <main>
@@ -146,7 +100,7 @@
 
             <h2>Destaques da Temporada Europeia</h2>
 
-            <p class="meta-info">Por <strong>Redação Esportiva</strong></p>
+            <p><strong>Por:</strong> Redação Esportiva</p>
 
             <p>
                 Confira nossa análise detalhada dos confrontos da Liga dos Campeões,
@@ -154,90 +108,96 @@
                 Tudo sobre o esporte mais amado do planeta no mais alto nível de competição.
             </p>
 
-            <button class="btn-curtir">
-                <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+            <button class="btnCurtir">
+                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
         <article>
             <h2>🎯 1. Análises Táticas Profundas</h2>
-            <p class="meta-info">Entenda o que acontece além da bola na rede</p>
+            <p>O público que busca "futebol de alto nível" quer entender o que acontece além da bola na rede.</p>
             <ul>
-                <li><strong>Desconstruindo Sistemas:</strong> Como o esquema sem centroavante fixo revolucionou o ataque dos grandes europeus.</li>
-                <li><strong>Análise Match-by-Match:</strong> O raio-x tático dos clássicos da Champions e Premier League (linhas altas, compactação e contra-ataques).</li>
+                <li><strong>Desconstruindo Sistemas:</strong> "Como o esquema sem centroavante fixo revolucionou o ataque dos grandes europeus".</li>
+                <li><strong>Análise Match-by-Match:</strong> Escolha o clássico do fim de semana na Champions League ou Premier League e analise onde o jogo foi ganho taticamente.</li>
                 <li><strong>O Mapeamento do Pressionamento:</strong> Como os técnicos de ponta organizam o <em>pressing</em> na saída de bola adversária.</li>
             </ul>
-            <button class="btn-curtir">
-                <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+            <button class="btnCurtir">
+                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
         <article>
-            <h2>📊 2. Dados e Métricas Avançadas (Analytics)</h2>
-            <p class="meta-info">Métricas sofisticadas explicadas de forma simples</p>
+            <h2>📊 2. Dados e Métricas Avançadas (Futebol Analytics)</h2>
+            <p>Simplifique números sofisticados para tornar a leitura visual e cativante.</p>
             <ul>
-                <li><strong>A Metrificação da Performance:</strong> O que métricas como xG (Gols Esperados), xA (Assistências) e PPDA revelam sobre o favoritismo dos clubes.</li>
-                <li><strong>Os Extremos Mais Eficientes:</strong> Comparativo de dados de eficácia no 1v1 entre os pontas que dominam a Europa.</li>
+                <li><strong>A Metrificação da Performance:</strong> O que métricas como xG, xA e PPDA revelam sobre o favoritismo dos clubes.</li>
+                <li><strong>Os Extremos Mais Eficientes do Mundo:</strong> Comparativo de dados de eficácia no 1v1 entre os pontas que dominam a Europa.</li>
                 <li><strong>Goleiros Modernos:</strong> Como a precisão nos passes longos se tornou tão decisiva quanto defesas difíceis.</li>
             </ul>
-            <button class="btn-curtir">
-                <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+            <button class="btnCurtir">
+                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
         <article>
-            <h2>💼 3. Bastidores, Finanças e Mercado</h2>
-            <p class="meta-info">O mercado milionário por trás do espetáculo</p>
+            <h2>💼 3. Bastidores, Finanças e Mercado de Transferências</h2>
+            <p>Futebol de elite é também um mercado de bilhões de euros.</p>
             <ul>
-                <li><strong>Impacto do Fair Play Financeiro (FFP):</strong> Como as regras de sustentabilidade da UEFA afetam os superclubes.</li>
-                <li><strong>A Anatomia de um Negócio Histórico:</strong> O impacto técnico e financeiro das maiores transferências do futebol.</li>
-                <li><strong>Modelo de Multiclubes (MCO):</strong> Como grupos gerenciam redes globais de talentos.</li>
+                <li><strong>Impacto do Fair Play Financeiro (FFP):</strong> Como as novas regras de sustentabilidade financeira da UEFA afetam as contratações.</li>
+                <li><strong>A Anatomia de um Negócio Histórico:</strong> O raio-x do impacto técnico e financeiro de uma grande transferência milionária.</li>
+                <li><strong>Modelo de Multiclubes (MCO):</strong> Como grupos donos de múltiplos clubes gerenciam talentos globais.</li>
             </ul>
-            <button class="btn-curtir">
-                <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+            <button class="btnCurtir">
+                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
         <article>
             <h2>🌟 4. Perfis de Estrelas & Promessas de Elite</h2>
-            <p class="meta-info">A evolução e o comportamento dos grandes craques</p>
+            <p>O leitor adora entender o comportamento e a evolução dos grandes craques.</p>
             <ul>
-                <li><strong>O Raio-X do Craque:</strong> Como as jovens promessas (<em>wonderkids</em>) se preparam para decidir a Champions League.</li>
-                <li><strong>Longevidade no Esporte de Elite:</strong> Treinamento, nutrição e preparação mental dos atletas no topo após os 35 anos.</li>
-                <li><strong>Seleção vs. Clubes:</strong> A diferença de ritmo e entrosamento entre futebol internacional e os gigantes europeus.</li>
+                <li><strong>O Raio-X do Craque:</strong> Como as jovens promessas (<em>wonderkids</em>) se tornam realidades prontas para decidir jogos.</li>
+                <li><strong>Longevidade no Esporte de Elite:</strong> O treinamento físico, nutrição e preparação mental por trás dos atletas acima dos 35 anos.</li>
+                <li><strong>A Transição da Seleção para os Clubes:</strong> A diferença de ritmo, entrosamento e carga de jogos.</li>
             </ul>
-            <button class="btn-curtir">
-                <span class="icone-curtir">🤍</span> Curtir (<span class="contador">0</span>)
+            <button class="btnCurtir">
+                <span class="iconeCurtir">🤍 Curtir</span> (<span class="contador">0</span>)
             </button>
         </article>
 
-        <article class="dicas-box">
-            <h2>💡 Dicas de Leitura e Formato</h2>
+        <article>
+            <h2>💡 Dicas Estruturais para o Blog</h2>
             <ul>
-                <li><strong>Pense Visualmente:</strong> Em breve traremos mapas de calor, pranchetas táticas e gráficos explicativos em cada post.</li>
-                <li><strong>Séries Fixas:</strong> Acompanhe quadros semanais como <em>"O Desenho da Rodada"</em> e <em>"Raio-X da Champions"</em>.</li>
-                <li><strong>Linguagem Direta:</strong> Conteúdo técnico e especializado com leitura fluida e acessível.</li>
+                <li><strong>Pense Visualmente:</strong> Inclua mapas de calor, pranchetas táticas e gráficos explicativos.</li>
+                <li><strong>Crie Séries Fixas:</strong> Crie quadros como "O Desenho da Rodada" ou "Raio-X da Champions".</li>
+                <li><strong>Linguagem Acessível:</strong> Mantenha o tom especializado sem deixar o texto pesado.</li>
             </ul>
         </article>
     </main>
 
     <script>
-        // Seleciona todos os botões de curtir do blog
-        const botoes = document.querySelectorAll(".btn-curtir");
+        const botoes = document.querySelectorAll(".btnCurtir");
 
         botoes.forEach(botao => {
             let curtidas = 0;
             let curtiu = false;
 
             botao.addEventListener("click", function() {
-                const icone = this.querySelector(".icone-curtir");
+                const icone = this.querySelector(".iconeCurtir");
                 const contador = this.querySelector(".contador");
 
-                curtiu = !curtiu;
-                curtidas += curtiu ? 1 : -1;
+                if (curtiu) {
+                    curtidas--;
+                    curtiu = false;
+                    this.classList.remove("curtido");
+                    icone.textContent = "🤍 Curtir";
+                } else {
+                    curtidas++;
+                    curtiu = true;
+                    this.classList.add("curtido");
+                    icone.textContent = "❤️ Curtido";
+                }
 
-                this.classList.toggle("curtido", curtiu);
-                icone.textContent = curtiu ? "❤️" : "🤍";
                 contador.textContent = curtidas;
             });
         });
