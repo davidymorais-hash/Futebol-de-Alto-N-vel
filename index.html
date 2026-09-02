@@ -15,6 +15,16 @@
             --border: #232d42;
         }
 
+        /* Variáveis para o Tema Claro */
+        [data-tema="claro"] {
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --accent: #0072ff;
+            --text: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -26,6 +36,7 @@
             background-color: var(--bg-body);
             color: var(--text);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Topbar / Header */
@@ -72,7 +83,8 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .badge {
@@ -90,7 +102,7 @@
         article h2 {
             font-size: 1.6rem;
             margin-bottom: 10px;
-            color: #fff;
+            color: var(--text);
         }
 
         .meta-info {
@@ -109,7 +121,8 @@
         }
 
         article p {
-            color: #cbd5e1;
+            color: var(--text);
+            opacity: 0.9;
             margin-bottom: 15px;
         }
 
@@ -117,7 +130,7 @@
         .btn-curtir {
             background: transparent;
             border: 1px solid var(--border);
-            color: #fff;
+            color: var(--text);
             padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
@@ -151,6 +164,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .widget h3 {
@@ -179,7 +193,29 @@
         }
 
         .ranking-table tr:not(:last-child) td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Estilo do Botão de Alternar Tema (Flutuante) */
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 12px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
         }
 
         /* Responsividade */
@@ -297,6 +333,9 @@
 
     </div>
 
+    <!-- Botão de alternar tema -->
+    <button id="btn-tema" class="theme-toggle-btn">☀️ Modo Claro</button>
+
     <script>
         // Sistema interativo de curtidas para todos os posts
         const botoes = document.querySelectorAll(".btn-curtir");
@@ -316,6 +355,21 @@
                 icone.textContent = curtiu ? "❤️" : "🤍";
                 contador.textContent = curtidas;
             });
+        });
+
+        // Alternar Tema (Modo Escuro / Modo Claro)
+        const btnTema = document.getElementById("btn-tema");
+
+        btnTema.addEventListener("click", () => {
+            const temaAtual = document.body.getAttribute("data-tema");
+            
+            if (temaAtual === "claro") {
+                document.body.removeAttribute("data-tema");
+                btnTema.textContent = "☀️ Modo Claro";
+            } else {
+                document.body.setAttribute("data-tema", "claro");
+                btnTema.textContent = "🌙 Modo Escuro";
+            }
         });
     </script>
 
